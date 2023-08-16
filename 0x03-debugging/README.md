@@ -1,5 +1,6 @@
 
-## File: 0-main.c, main.h:  
+## File: 0-main.c, main.h:
+  
 In most projects, we often give you only one main file to test with. For example, this main file is a test for a postitive_or_negative() function similar to the one you worked with in an earlier C project:
 
 carrie@ubuntu:/debugging$ cat main.c
@@ -45,4 +46,48 @@ carrie@ubuntu:/debugging$ ./0-main
 0 is zero
 carrie@ubuntu:/debugging$ wc -l 0-main.c
 16 1-main.c
-carrie@ubuntu:/debugging$ 
+carrie@ubuntu:/debugging$
+
+## File: 1-main.c: 
+
+Copy this main file. Comment out (don’t delete it!) the part of the code that is causing the output to go into an infinite loop.
+
+Don’t add or remove any lines of code, as we will be checking your line count. You are only allowed to comment out existing code.
+You do not have to compile with -Wall -Werror -Wextra -pedantic for this task.
+carrie@ubuntu:/debugging$ cat 1-main.c
+#include <stdio.h>
+
+/**
+* main - causes an infinite loop
+* Return: 0
+*/
+
+int main(void)
+{
+        int i;
+
+        printf("Infinite loop incoming :(\n");
+
+        i = 0;
+
+        while (i < 10)
+        {
+                putchar(i);
+        }
+
+        printf("Infinite loop avoided! \\o/\n");
+
+        return (0);
+}
+carrie@ubuntu:/debugging$
+Your output should look like this:
+
+carrie@ubuntu:/debugging$ gcc -std=gnu89 1-main.c -o 1-main
+carrie@ubuntu:/debugging$ ./1-main
+Infinite loop incoming :(
+Infinite loop avoided! \o/
+carrie@ubuntu:/debugging$ wc -l 1-main.c
+24 1-main.c
+carrie@ubuntu:/debugging$
+
+
