@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * get_nodeint_at_index - get index
+ * get_nodeint_at_index - returns the node at a specific index
  * @head: node at the first
- * @index: returned index
+ * @index: index of the node ...
  *
- * Return: pointer 
+ * Return: pointer to the node at the index
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
