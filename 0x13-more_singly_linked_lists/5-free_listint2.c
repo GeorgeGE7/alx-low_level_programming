@@ -3,6 +3,7 @@
 /**
  * free_listint2  linked lest freeing
  * @head: pointer to freed
+ * return
  */
 void free_listint2(listint_t **head)
 {
