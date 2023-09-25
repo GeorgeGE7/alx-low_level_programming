@@ -1,10 +1,8 @@
 #include "lists.h"
 
 /**
- * free_listint2  linked lest freeing
- * @head: pointer to freed
- *
- * return
+ * free_listint2 - freeing
+ * @head: freed pointer
  */
 void free_listint2(listint_t **head)
 {
