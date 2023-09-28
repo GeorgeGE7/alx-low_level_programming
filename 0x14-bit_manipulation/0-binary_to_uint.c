@@ -2,13 +2,13 @@
 #include <stdio.h>
 
 /**
- * binary_to_uint - convert a binary number to an unsigned int
- * @b: char string
- * Return: converted decimal number or 0 if there is an unconvertable char
+ * binary_to_uint - convert a binary number unsigned int
+ * @b: string
+ * Return: converted decimal number or 0
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int total, power;
+	unsigned int all, po;
 	int len;
 
 	if (b == NULL)
@@ -20,11 +20,11 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 	}
 
-	for (power = 1, total = 0, len--; len >= 0; len--, power *= 2)
+	for (po = 1, all = 0, len--; len >= 0; len--, po *= 2)
 	{
 		if (b[len] == '1')
-			total += power;
+			all += po;
 	}
 
-	return (total);
+	return (all);
 }
