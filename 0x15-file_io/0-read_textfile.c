@@ -2,17 +2,17 @@
 #include <stdlib.h>
 
 /**
- * read_textfile - Reads a text on a file and prints (log) it to POSIX stdout.
+ * read_textfile - Reads a text file and prints it to POSIX stdout.
  * @filename: A pointer to the name of the file.
  * @letters: The number of letters the
  *           function should read and print.
  *
- * Return: If the function gives an error or fails or the file name is === NULL - 0.
- *         O/w - the real number of bytes the method or function can read and print (log).
+ * Return: If the function fails or filename is NULL - 0.
+ *         O/w - the actual number of bytes the function can read and print.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t oup, rdp, wrt;
+	ssize_t o, r, w;
 	char *buffer;
 
 	if (filename == NULL)
@@ -22,18 +22,18 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buffer == NULL)
 		return (0);
 
-	oup = open(filename, O_RDONLY);
-	rdb = read(o, buffer, letters);
-	wrt = write(STDOUT_FILENO, buffer, rdb);
+	o = open(filename, O_RDONLY);
+	r = read(o, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
 
-	if (oup == -1 || rdb == -1 || wrt == -1 || wrt != rdb)
+	if (o == -1 || r == -1 || w == -1 || w != r)
 	{
 		free(buffer);
 		return (0);
 	}
 
 	free(buffer);
-	close(oup);
+	close(o);
 
-	return (wrt);
+	return (w);
 }
