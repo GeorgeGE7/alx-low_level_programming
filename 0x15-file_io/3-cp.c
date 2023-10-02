@@ -6,25 +6,25 @@ char *create_buffer(char *file);
 void close_file(int fd);
 
 /**
- * create_buffer - Allocates 1024 bytes for a buffer.
- * @file: The name of the file buffer is storing chars for.
+ * create_buffer - Will allocate 1024 bytes for a buffer.
+ * @file: Chars are stored on the name of the file buffer.
  *
- * Return: A pointer to the newly-allocated buffer.
+ * Return: The all newly allocated buffer pointer.
  */
 char *create_buffer(char *file)
 {
-	char *buffer;
+	char *brrf;
 
-	buffer = malloc(sizeof(char) * 1024);
+	brrf = malloc(sizeof(char) * 1024);
 
-	if (buffer == NULL)
+	if (brrf == NULL)
 	{
 		dprintf(STDERR_FILENO,
 			"Error: Can't write to %s\n", file);
 		exit(99);
 	}
 
-	return (buffer);
+	return (brrf);
 }
 
 /**
