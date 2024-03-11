@@ -1,1 +1,1 @@
-C serching algorthemis
+Linear serach algos
